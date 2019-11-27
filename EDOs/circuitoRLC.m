@@ -4,7 +4,7 @@ function [Qa  psi psirk2] = circuitoRLC(V,R,L,C,h,Tf)
     fprintf('\n        MODELO COMPUTACIONAL PARA SOLUÇÃO DO SISTEMA DINÂMICO');
     fprintf('\n\tCIRCUITO ELÉTRICO RLC EM SÉRIE (CIRCUITO RESSONANTE)\n');
     fprintf('\n\t\t\tAMORTECIMENTO FRACO\n');
-    fprintf('\n\t\t\tR² - 4*C < 0  e L > 0\n');
+    fprintf('\n\t\t\tR² - 4*L*1/C < 0\n');
     fprintf('\n\t\t           R (Resistor)');
     fprintf('\n\t\t   +-----/\\/\\/\\------+');
     fprintf('\n\t\t   |                 |');
@@ -33,7 +33,7 @@ function [Qa  psi psirk2] = circuitoRLC(V,R,L,C,h,Tf)
     %SOLUÇÃO DO SISTEMA DINÂMICO 
     %CIRCUITO ELÉTRICO RLC EM SÉRIE (CIRCUITO RESSONANTE)
     % AMORTECIMENTO FRACO
-    % R² - 4*C < 0  e L > 0
+    % R² - 4*L*1/C
 
     %            R (Resistor)
     %   +-----/\/\/\------+
@@ -86,7 +86,7 @@ function [Qa  psi psirk2] = circuitoRLC(V,R,L,C,h,Tf)
     % x1,2  = -500 +- 500*sqrt(3)i
     % Q(T) =  12/10^6*( 1- (e^(-500*T))*(  cos(500*sqrt(3)*T) + 1/(sqrt(3))*sen(500*sqrt(3)*T) ) )
 
-    if R^2 - 4*1/C < 0 && L > 0
+    if R^2 - 4*L*1/C < 0
 
         % L*Q"(t) + R*Q'(t) + (1/C)*Q(t) = V.
 
