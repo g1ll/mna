@@ -1,2 +1,2 @@
-# mna_matlab
+# mna
 ## Exemplos de Métodos Numéricos Aplicados
